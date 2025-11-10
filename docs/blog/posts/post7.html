@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <title>AxelBase – OAuth Token Inspector</title>
+		<link rel="icon" href="../../AxelLab-Logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.U2kIy6WS.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/10.DYDsgf4U.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.Bc2NRBOk.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D634OKY0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/gLR2rXyW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D2SCgjW4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CxahLZfs.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CkfOm85K.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/HWy2h-1Z.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Ch76_uMc.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CpmvvIb5.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CDQDGe86.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.D0xm7Wyv.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/C-vnMa-8.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/AtiAHdXu.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dhir5tAp.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CsAPl1sP.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/10.DQ84BWRT.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/P0gGzP0m.js"><!--jo8es1--><meta name="description" content="Fork, customize, and deploy your own version of OAuth Token Inspector in under 5 minutes using GitHub Pages and SvelteKit."/> <meta name="robots" content="index, follow"/> <meta property="og:title" content="Deploy Your Own Token Inspector | Blog"/> <meta property="og:description" content="Free, open-source, and fully static — host it anywhere."/> <meta property="og:url" content="../../blog/posts/post7"/> <meta property="og:type" content="article"/> <meta property="og:site_name" content="OAuth Token Inspector"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="Deploy in 5 Minutes"/> <meta name="twitter:description" content="GitHub Pages + SvelteKit = Your own JWT tool."/> <meta name="author" content="Axelbase"/><!----><title>Deploying Your Own Token Inspector with GitHub Pages | Blog</title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header class="navbar-sticky"><nav class="navbar-container"><div class="navbar-left"><a href="../../" class="navbar-logo-link" aria-label="AxelBase Home"><img src="../../AxelLab-Logo.ico" alt="AxelBase Logo" class="navbar-logo"/></a> <a href="../../" class="navbar-brand">AxelBase</a> <div class="bmac-container"><button class="bmac-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> <span>Buy me a coffee</span></button> <!--[!--><!--]--></div></div> <ul class="navbar-links"><li><a href="../../" class="nav-link">Home</a></li> <li><a href="../../#about" class="nav-link">About</a></li> <li><a href="../../#how-to-use" class="nav-link">How to use</a></li> <li><a href="../../#faq" class="nav-link">FAQ</a></li> <li><a href="../../blog" class="nav-link">Blog</a></li></ul></nav></header> <main class="content-wrapper"><!--[--><!----><div class="container fade-in post-layout svelte-jo8es1"><div class="breadcrumbs svelte-jo8es1"><a href="../../blog" class="svelte-jo8es1">Blog</a> <span>/</span> <p class="svelte-jo8es1">Deploying Your Own Token Inspector</p></div> <article class="prose svelte-jo8es1"><h1 class="svelte-jo8es1">Deploying Your Own Token Inspector with GitHub Pages</h1> <p class="post-meta svelte-jo8es1">Published: November 10, 2025</p> <p class="svelte-jo8es1">The <strong>OAuth Token Inspector</strong> is open-source and designed for self-hosting. With SvelteKit’s <code class="svelte-jo8es1">@sveltejs/adapter-static</code> and GitHub Pages, you can have your own secure, client-side JWT decoder live in under 5 minutes — no server, no cost, no maintenance.</p> <h2 class="svelte-jo8es1">Why Host Your Own?</h2> <ul class="svelte-jo8es1"><li class="svelte-jo8es1"><strong>Full control</strong> — customize branding, add features</li> <li class="svelte-jo8es1"><strong>Zero trust</strong> — no third-party analytics or scripts</li> <li class="svelte-jo8es1"><strong>Offline use</strong> — download and open <code class="svelte-jo8es1">index.html</code></li> <li class="svelte-jo8es1"><strong>Team sharing</strong> — internal tool for developers</li></ul> <h2 class="svelte-jo8es1">Step-by-Step Deployment</h2> <h3 class="svelte-jo8es1">1. Fork the Repository</h3> <p class="svelte-jo8es1">Go to: <a href="https://github.com/Axelbase/oauth-token-inspector" target="_blank" rel="noopener">github.com/Axelbase/oauth-token-inspector</a> → Click <strong>Fork</strong>.</p> <h3 class="svelte-jo8es1">2. Enable GitHub Pages</h3> <ol class="svelte-jo8es1"><li class="svelte-jo8es1">Go to <strong>Settings</strong> → <strong>Pages</strong></li> <li class="svelte-jo8es1">Source: <code class="svelte-jo8es1">main</code> branch → <code class="svelte-jo8es1">/ (root)</code></li> <li class="svelte-jo8es1">Save</li></ol> <h3 class="svelte-jo8es1">3. Build &amp; Deploy</h3> <p class="svelte-jo8es1">GitHub Actions auto-deploys on push:</p> <pre class="svelte-jo8es1"><code class="svelte-jo8es1"># .github/workflows/deploy.yml
+name: Deploy
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build</code></pre> <h3 class="svelte-jo8es1">4. Go Live</h3> <p class="svelte-jo8es1">Your site is at: <code class="svelte-jo8es1">https://your-username.github.io/oauth-token-inspector</code></p> <h2 class="svelte-jo8es1">Customization Ideas</h2> <ul class="svelte-jo8es1"><li class="svelte-jo8es1">Add your company logo in <code class="svelte-jo8es1">+layout.svelte</code></li> <li class="svelte-jo8es1">Change primary color in <code class="svelte-jo8es1">app.css</code></li> <li class="svelte-jo8es1">Add a "Report Issue" button linking to your repo</li> <li class="svelte-jo8es1">Embed in internal wiki or Notion</li></ul> <h2 class="svelte-jo8es1">Local Development</h2> <pre class="svelte-jo8es1"><code class="svelte-jo8es1">git clone your-fork
+cd oauth-token-inspector
+npm install
+npm run dev</code></pre> <h2 class="svelte-jo8es1">FAQ</h2> <details class="svelte-jo8es1"><summary class="svelte-jo8es1">Can I use a custom domain?</summary> <p class="svelte-jo8es1">Yes. Add CNAME in repo root and configure DNS.</p></details> <details class="svelte-jo8es1"><summary class="svelte-jo8es1">Is it free?</summary> <p class="svelte-jo8es1">100% free. GitHub Pages + open-source = $0.</p></details> <details class="svelte-jo8es1"><summary class="svelte-jo8es1">Can I use it offline?</summary> <p class="svelte-jo8es1">Yes. Download the <code class="svelte-jo8es1">build/</code> folder and open <code class="svelte-jo8es1">index.html</code>.</p></details> <p class="italic-note svelte-jo8es1">Your tool. Your domain. Your rules.</p></article></div><!----><!--]--></main> <footer class="footer-sticky"><div class="footer-container"><span class="footer-copyright">© AxelBase Markdown to HTML Converter – 2025</span> <div class="footer-links"><a href="../../privacy">Privacy Policy</a> <a href="../../terms">Terms and conditions</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1j9699b = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/oauth-token-inspector"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.Bc2NRBOk.js"),
+						import("../../_app/immutable/entry/app.CkfOm85K.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 10],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

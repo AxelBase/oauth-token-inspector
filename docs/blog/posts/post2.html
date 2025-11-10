@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <title>AxelBase – OAuth Token Inspector</title>
+		<link rel="icon" href="../../AxelLab-Logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.U2kIy6WS.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/5.D8qgCNa0.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.Bc2NRBOk.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D634OKY0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/gLR2rXyW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D2SCgjW4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CxahLZfs.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CkfOm85K.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/HWy2h-1Z.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Ch76_uMc.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CpmvvIb5.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CDQDGe86.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.D0xm7Wyv.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/C-vnMa-8.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/AtiAHdXu.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dhir5tAp.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CsAPl1sP.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/5.CMy-gGUK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/P0gGzP0m.js"><!--1apmzc4--><meta name="description" content="Learn the security risks of using public JWT decoders and why client-side tools like OAuth Token Inspector are essential for safe development."/> <meta name="robots" content="index, follow"/> <meta property="og:title" content="Why You Should Never Paste Tokens Online | Blog"/> <meta property="og:description" content="Learn the security risks of using public JWT decoders and why client-side tools are essential."/> <meta property="og:url" content="../../blog/posts/post2"/> <meta property="og:type" content="article"/> <meta property="og:site_name" content="OAuth Token Inspector"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="Never Paste Tokens Online"/> <meta name="twitter:description" content="Public JWT decoders can log your tokens. Use client-side inspection instead."/> <meta name="author" content="Axelbase"/><!----><title>Why You Should Never Paste Tokens Online | Blog</title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header class="navbar-sticky"><nav class="navbar-container"><div class="navbar-left"><a href="../../" class="navbar-logo-link" aria-label="AxelBase Home"><img src="../../AxelLab-Logo.ico" alt="AxelBase Logo" class="navbar-logo"/></a> <a href="../../" class="navbar-brand">AxelBase</a> <div class="bmac-container"><button class="bmac-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> <span>Buy me a coffee</span></button> <!--[!--><!--]--></div></div> <ul class="navbar-links"><li><a href="../../" class="nav-link">Home</a></li> <li><a href="../../#about" class="nav-link">About</a></li> <li><a href="../../#how-to-use" class="nav-link">How to use</a></li> <li><a href="../../#faq" class="nav-link">FAQ</a></li> <li><a href="../../blog" class="nav-link">Blog</a></li></ul></nav></header> <main class="content-wrapper"><!--[--><!----><div class="container fade-in post-layout svelte-1apmzc4"><div class="breadcrumbs svelte-1apmzc4"><a href="../../blog" class="svelte-1apmzc4">Blog</a> <span>/</span> <p class="svelte-1apmzc4">Why You Should Never Paste Tokens Online</p></div> <article class="prose svelte-1apmzc4"><h1 class="svelte-1apmzc4">Why You Should Never Paste Tokens Online</h1> <p class="post-meta svelte-1apmzc4">Published: November 10, 2025</p> <p class="svelte-1apmzc4">Every day, developers copy OAuth tokens from browser consoles, Postman, or curl outputs and paste them into online JWT decoders. While convenient, this practice introduces severe security risks. The <strong>OAuth Token Inspector</strong> was built to eliminate this vulnerability by bringing token inspection directly into your browser — with zero data transmission.</p> <h2 class="svelte-1apmzc4">The Hidden Dangers of Public Decoders</h2> <p class="svelte-1apmzc4">Popular sites like jwt.io, jwt.ms, and others are useful for learning — but they come with trade-offs. When you paste a token:</p> <ul class="svelte-1apmzc4"><li class="svelte-1apmzc4"><strong>Your token is sent over HTTPS</strong> to their servers for processing.</li> <li class="svelte-1apmzc4"><strong>Logs may retain inputs</strong> for debugging or analytics.</li> <li class="svelte-1apmzc4"><strong>Third-party scripts</strong> (ads, trackers) could intercept data.</li> <li class="svelte-1apmzc4"><strong>Insider threats</strong> or breaches expose historical inputs.</li></ul> <p class="svelte-1apmzc4">A single leaked access token can allow attackers to impersonate users, access APIs, or escalate privileges. Even short-lived tokens (e.g., 15 minutes) provide a window of opportunity.</p> <h3 class="svelte-1apmzc4">Real-World Consequences</h3> <p class="svelte-1apmzc4">In 2023, a major SaaS provider suffered a supply-chain attack via a compromised third-party analytics script on a public tool. Tokens pasted weeks earlier were extracted and used to breach customer systems. This incident underscored the need for <em>zero-trust</em> developer tools.</p> <h3 class="svelte-1apmzc4">How OAuth Token Inspector Solves This</h3> <p class="svelte-1apmzc4">Our tool runs 100% client-side:</p> <ul class="svelte-1apmzc4"><li class="svelte-1apmzc4">No HTTP requests for token processing</li> <li class="svelte-1apmzc4">No cookies, localStorage, or telemetry</li> <li class="svelte-1apmzc4">Static build via <code>adapter-static</code></li> <li class="svelte-1apmzc4">Open-source and auditable on GitHub</li></ul> <p class="svelte-1apmzc4">After <code>npm run build</code>, the output is pure HTML/CSS/JS — deployable anywhere, even offline.</p> <h2 class="svelte-1apmzc4">Best Practices for Token Handling</h2> <p class="svelte-1apmzc4">Follow these rules to stay safe:</p> <ol class="svelte-1apmzc4"><li class="svelte-1apmzc4">Use client-side tools for inspection</li> <li class="svelte-1apmzc4">Revoke exposed tokens immediately</li> <li class="svelte-1apmzc4">Enable short expiration ( less than 1 hour)</li> <li class="svelte-1apmzc4">Rotate secrets regularly</li> <li class="svelte-1apmzc4">Audit third-party tool permissions</li></ol> <h2 class="svelte-1apmzc4">FAQ</h2> <details class="svelte-1apmzc4"><summary class="svelte-1apmzc4">Can I use jwt.io safely?</summary> <p class="svelte-1apmzc4">Only with non-sensitive, expired, or dummy tokens. Never paste production credentials.</p></details> <details class="svelte-1apmzc4"><summary class="svelte-1apmzc4">What about browser extensions?</summary> <p class="svelte-1apmzc4">Many send data to remote servers. Prefer static web tools or CLI utilities.</p></details> <details class="svelte-1apmzc4"><summary class="svelte-1apmzc4">Is copy-paste into VS Code safe?</summary> <p class="svelte-1apmzc4">Yes — but avoid version control. Use <code>.gitignore</code> and secret scanners.</p></details> <p class="italic-note svelte-1apmzc4">Security is a habit. Inspect locally, deploy confidently.</p></article></div><!----><!--]--></main> <footer class="footer-sticky"><div class="footer-container"><span class="footer-copyright">© AxelBase Markdown to HTML Converter – 2025</span> <div class="footer-links"><a href="../../privacy">Privacy Policy</a> <a href="../../terms">Terms and conditions</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1j9699b = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/oauth-token-inspector"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.Bc2NRBOk.js"),
+						import("../../_app/immutable/entry/app.CkfOm85K.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

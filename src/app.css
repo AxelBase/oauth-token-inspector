@@ -1,0 +1,616 @@
+/* src/app.css */
+
+/* --- 🎨 Professional Theme: Pearl Ruby Red & White --- */
+:root {
+	/* Color Palette */
+	--color-ruby-red: #b71c1c; /* Primary brand color */
+	--color-ruby-dark: #8c1515; /* Darker red for hover */
+	--color-pearl: #fdfefe; /* Pearl white for surfaces */
+	--color-white: #ffffff; /* Pure white */
+	--color-background: #f8f9fa; /* Light grey body background */
+	--color-text-primary: #212529; /* Dark text for readability */
+	--color-text-secondary: #6c757d; /* Lighter text */
+	--color-text-inverted: #ffffff; /* White text on red backgrounds */
+	--color-border: #e0e0e0; /* Light border color */
+	--color-green-valid: #198754; /* Green for valid status */
+	--color-yellow-warning: #ffc107; /* Yellow for warning */
+
+	/* Layout Dimensions */
+	--navbar-height: 70px;
+	--footer-height: 50px;
+
+	/* Transitions */
+	--transition-speed: 0.3s;
+	--transition-timing: ease;
+
+	/* --- Original Syntax Highlighting Variables --- */
+	--highlight-key: #007bff; /* Blue for keys */
+	--highlight-string: #28a745; /* Green for strings */
+	--highlight-number: #dc3545; /* Red for numbers */
+	--highlight-boolean: #ffc107; /* Yellow for booleans */
+	--highlight-null: #6f42c1; /* Purple for null */
+}
+
+/* --- 🌐 Global & Base Styles --- */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+		sans-serif;
+	background-color: var(--color-background);
+	color: var(--color-text-primary);
+	line-height: 1.6;
+	transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+a {
+	color: var(--color-ruby-red);
+	text-decoration: none;
+	transition: color var(--transition-speed) var(--transition-timing);
+}
+
+a:hover {
+	color: var(--color-ruby-dark);
+	text-decoration: underline;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* --- 📐 Main Layout Wrapper --- */
+.content-wrapper {
+	padding-top: var(--navbar-height);
+	padding-bottom: var(--footer-height);
+	min-height: 100vh;
+}
+
+/* REMOVED the default padding. 
+  Spacing is now controlled by the new layout containers. 
+*/
+.content-wrapper > :first-child {
+	padding: 0;
+}
+
+/* --- ⬆️ Sticky Navbar --- */
+.navbar-sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--navbar-height);
+	background-color: var(--color-pearl);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	padding: 0 1.5rem;
+}
+
+.navbar-container {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-left {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.navbar-logo-link {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-logo {
+	height: 36px;
+	width: 36px;
+	transition: transform var(--transition-speed) var(--transition-timing);
+}
+.navbar-logo-link:hover .navbar-logo {
+	transform: rotate(10deg) scale(1.05);
+}
+
+.navbar-brand {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--color-ruby-red);
+	text-decoration: none;
+	transition: color var(--transition-speed) var(--transition-timing);
+}
+.navbar-brand:hover {
+	color: var(--color-ruby-dark);
+	text-decoration: none;
+}
+
+.navbar-links {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	gap: 1.75rem;
+}
+
+.nav-link {
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--color-text-primary);
+	text-decoration: none;
+	position: relative;
+	padding: 0.25rem 0;
+}
+
+.nav-link::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--color-ruby-red);
+	transition: width var(--transition-speed) var(--transition-timing);
+}
+
+.nav-link:hover {
+	color: var(--color-ruby-red);
+	text-decoration: none;
+}
+
+.nav-link:hover::after {
+	width: 100%;
+}
+
+/* --- ☕ "Buy me a coffee" Button --- */
+.bmac-container {
+	position: relative;
+}
+
+.bmac-button {
+	background-color: var(--color-ruby-red);
+	color: var(--color-text-inverted);
+	border: none;
+	border-radius: 50px;
+	padding: 0.5rem 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	transition: background-color var(--transition-speed) var(--transition-timing),
+		transform 0.2s ease;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bmac-button svg {
+	width: 18px;
+	height: 18px;
+	fill: currentColor;
+}
+
+.bmac-button:hover {
+	background-color: var(--color-ruby-dark);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.bmac-button:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bmac-dropdown {
+	position: absolute;
+	top: calc(100% + 10px);
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	background-color: var(--color-white);
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+	z-index: 1001;
+	overflow: hidden;
+}
+
+.bmac-dropdown a {
+	display: block;
+	padding: 0.75rem;
+	text-align: center;
+	color: var(--color-text-primary);
+	font-weight: 500;
+	text-decoration: none;
+	transition: background-color 0.2s var(--transition-timing);
+}
+
+.bmac-dropdown a:not(:last-child) {
+	border-bottom: 1px solid var(--color-border);
+}
+
+.bmac-dropdown a:hover {
+	background-color: var(--color-background);
+	color: var(--color-ruby-red);
+	text-decoration: none;
+}
+
+/* --- ⬇️ Sticky Footer --- */
+.footer-sticky {
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: var(--footer-height);
+	background-color: var(--color-text-primary);
+	color: var(--color-text-inverted);
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	padding: 0 1.5rem;
+}
+
+.footer-container {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-copyright {
+	font-size: 0.85rem;
+	color: #c0c0c0;
+}
+
+.footer-links {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.footer-links a {
+	font-size: 0.85rem;
+	color: var(--color-text-inverted);
+	text-decoration: none;
+}
+
+.footer-links a:hover {
+	color: var(--color-text-inverted);
+	text-decoration: underline;
+}
+
+/* --- 💻 Original Syntax Highlighting & Tooltip Styles --- */
+pre code .key {
+	color: var(--highlight-key);
+}
+pre code .string {
+	color: var(--highlight-string);
+}
+pre code .number {
+	color: var(--highlight-number);
+}
+pre code .boolean {
+	color: var(--highlight-boolean);
+}
+pre code .null {
+	color: var(--highlight-null);
+}
+
+pre code .key[title] {
+	text-decoration: underline dotted;
+	cursor: help;
+}
+
+/* --- ✨ NEW: Professional Layout & Component Styling --- */
+
+/* 1. Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* 2. New Page Layout Containers */
+
+/* Container for the Token Inspector App */
+.inspector-container {
+	max-width: 1100px; /* Wider for the app */
+	margin: 2rem auto;
+	padding: 2.5rem 3rem;
+	background: var(--color-white);
+	border-radius: 16px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+	animation: fadeIn 0.5s var(--transition-timing) backwards;
+	animation-delay: 0.1s;
+}
+
+/* Title inside the inspector */
+.inspector-container h1 {
+	font-size: 1.75rem;
+	color: var(--color-text-primary);
+	font-weight: 700;
+}
+
+/* Container for the text sections (About, FAQ) */
+.text-content-container {
+	max-width: 900px; /* Optimal width for reading text */
+	margin: 2rem auto;
+	padding: 0 1rem;
+	animation: fadeIn 0.5s var(--transition-timing) backwards;
+	animation-delay: 0.2s;
+}
+
+/* Card styling for About, FAQ sections */
+.content-section {
+	background-color: var(--color-white);
+	border-radius: 12px;
+	padding: 2rem 2.5rem;
+	margin: 2.5rem auto; /* Spacing between sections */
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	max-width: 100%;
+}
+
+/* 3. Bootstrap Component Overrides (TokenInput, Buttons, etc.) */
+
+/* --- Forms (TokenInput.svelte) --- */
+.form-control {
+	/* This is the <textarea> */
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	padding: 1rem; /* More padding */
+	transition: border-color var(--transition-speed) var(--transition-timing),
+		box-shadow var(--transition-speed) var(--transition-timing);
+
+	/* NEW: Make textarea look professional */
+	min-height: 160px; /* Much larger */
+	min-width: 98%;
+	font-size: 1rem;
+	font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+	resize: vertical;
+	background-color: #fcfcfc;
+	margin: 10px;
+}
+
+.form-control:focus {
+	border-color: var(--color-ruby-red);
+	box-shadow: 0 0 0 0.25rem rgba(183, 28, 28, 0.2);
+	background-color: var(--color-white);
+}
+
+/* --- Buttons (TokenInput.svelte, CopyButton.svelte) --- */
+
+/* Override for the button group */
+div.d-flex[class*='justify-content-'] {
+	justify-content: flex-end !important; /* Force buttons to the right */
+	gap: 1rem; /* Add spacing between buttons */
+}
+
+.btn {
+	border-radius: 8px; /* More professional radius */
+	font-weight: 600;
+	padding: 0.7rem 1.5rem; /* Better padding */
+	transition: all var(--transition-speed) var(--transition-timing);
+	transform: scale(1);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.btn:hover {
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+	transform: translateY(0) scale(1);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Primary Button (Parse) */
+.btn-primary {
+	margin-left: 10px;
+	background-color: var(--color-ruby-red);
+	border-color: var(--color-ruby-red);
+	color: var(--color-white);
+}
+.btn-primary:hover {
+	background-color: var(--color-ruby-dark);
+	border-color: var(--color-ruby-dark);
+	color: var(--color-white);
+}
+
+/* Secondary Button (Clear) */
+.btn-secondary {
+	background-color: var(--color-text-secondary);
+	border-color: var(--color-text-secondary);
+	color: var(--color-white);
+}
+.btn-secondary:hover {
+	background-color: #5a6268;
+	border-color: #545b62;
+	color: var(--color-white);
+}
+
+/* Outline Button (Copy) */
+.btn-outline-primary {
+	color: var(--color-ruby-red);
+	border-color: var(--color-ruby-red);
+	background-color: var(--color-white);
+}
+.btn-outline-primary:hover {
+	color: var(--color-white);
+	background-color: var(--color-ruby-red);
+	border-color: var(--color-ruby-red);
+}
+
+/* Small Button (Copy) */
+.btn-sm {
+	padding: 0.3rem 0.8rem;
+	font-size: 0.875rem;
+}
+
+/* --- Alerts (TokenInput.svelte) --- */
+.alert {
+	border: none;
+	border-left: 5px solid;
+	border-radius: 8px;
+	padding: 1rem 1.5rem;
+}
+
+.alert-info {
+	background-color: #e6f7ff;
+	border-color: #007bff;
+	color: #004085;
+	
+}
+
+.alert-warning {
+	/* This is the error alert */
+	background-color: #fff8e1;
+	border-color: var(--color-yellow-warning);
+	color: #66512c;
+	margin-top: 1.5rem; /* Add spacing */
+}
+
+/* --- Badges (TokenStatus.svelte) --- */
+.badge {
+	font-size: 0.8rem;
+	font-weight: 600;
+	padding: 0.4em 0.8em;
+	border-radius: 50px;
+}
+.badge.bg-success {
+	background-color: var(--color-green-valid) !important;
+	color: var(--color-white);
+}
+.badge.bg-danger {
+	background-color: var(--color-ruby-red) !important;
+	color: var(--color-white);
+}
+.badge.bg-warning {
+	background-color: var(--color-yellow-warning) !important;
+	color: var(--color-text-primary);
+}
+.badge.bg-secondary {
+	background-color: var(--color-text-secondary) !important;
+	color: var(--color-white);
+}
+
+/* --- Accordion (Header/Payload/Signature Sections) --- */
+.accordion {
+	--bs-accordion-border-radius: 8px;
+	--bs-accordion-inner-border-radius: 8px;
+	--bs-accordion-border-color: var(--color-border);
+	overflow: hidden;
+	margin-top: 2rem; /* Add space above accordion */
+}
+
+.accordion-item {
+	margin-bottom: 1rem;
+	border-radius: var(--bs-accordion-border-radius) !important;
+	border: 1px solid var(--color-border);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+	overflow: hidden;
+}
+.accordion-item:last-child {
+	margin-bottom: 0;
+}
+
+.accordion-header {
+	margin: 25px;
+}
+
+.accordion-button {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--color-text-primary);
+	background-color: var(--color-pearl);
+	transition: background-color var(--transition-speed) var(--transition-timing);
+}
+
+.accordion-button:not(.collapsed) {
+	background-color: var(--color-ruby-red);
+	color: var(--color-white);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+.accordion-button:not(.collapsed)::after {
+	filter: brightness(0) invert(1);
+}
+
+.accordion-button:focus {
+	box-shadow: 0 0 0 0.25rem rgba(183, 28, 28, 0.2);
+	border-color: var(--color-ruby-red);
+}
+
+.accordion-button:hover {
+	background-color: #f5f5f5;
+}
+
+.accordion-button:not(.collapsed):hover {
+	background-color: var(--color-ruby-dark);
+}
+
+.accordion-body {
+	background-color: var(--color-white);
+	padding: 1.5rem;
+}
+
+/* --- Pre/Code Blocks (Inside Accordion) --- */
+pre.bg-light {
+	background-color: var(--color-background) !important;
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	padding: 1rem !important;
+}
+
+pre code {
+	word-break: break-all;
+	white-space: pre-wrap;
+	font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+	font-size: 0.9rem;
+}
+
+/* 4. Content Section Typography */
+.content-section h2 {
+	color: var(--color-ruby-red);
+	font-weight: 700;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--color-border);
+	margin-bottom: 1.5rem !important;
+}
+
+.content-section p {
+	color: var(--color-text-primary);
+	line-height: 1.7;
+	margin-bottom: 1.25rem;
+}
+
+.content-section strong {
+	color: var(--color-text-primary);
+	font-weight: 600;
+}
+
+.content-section em {
+	color: var(--color-ruby-dark);
+	font-style: italic;
+	font-weight: 500;
+}
+
+.content-section code {
+	background-color: rgba(183, 28, 28, 0.08);
+	color: var(--color-ruby-dark);
+	border-radius: 4px;
+	padding: 0.2em 0.4em;
+	font-size: 0.9em;
+}

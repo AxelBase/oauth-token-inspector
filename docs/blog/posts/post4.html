@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <title>AxelBase – OAuth Token Inspector</title>
+		<link rel="icon" href="../../AxelLab-Logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.U2kIy6WS.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/7.2jovEQ7Z.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.Bc2NRBOk.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D634OKY0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/gLR2rXyW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D2SCgjW4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CxahLZfs.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CkfOm85K.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/HWy2h-1Z.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Ch76_uMc.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CpmvvIb5.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CDQDGe86.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.D0xm7Wyv.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/C-vnMa-8.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/AtiAHdXu.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dhir5tAp.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CsAPl1sP.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/7.Bv5UoFrh.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/P0gGzP0m.js"><!--led0iy--><meta name="description" content="Learn how to use OAuth Token Inspector to detect expired tokens, validate claims, and spot tampering using visual cues and signature inspection."/> <meta name="robots" content="index, follow"/> <meta property="og:title" content="How to Detect Expired or Tampered Tokens | Blog"/> <meta property="og:description" content="Use color-coded status, tooltips, and raw signature display to ensure token integrity."/> <meta property="og:url" content="../../blog/posts/post4"/> <meta property="og:type" content="article"/> <meta property="og:site_name" content="OAuth Token Inspector"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="Detect Expired &amp; Tampered Tokens"/> <meta name="twitter:description" content="Visual validation tools for JWT security."/> <meta name="author" content="Axelbase"/><!----><title>How to Detect Expired or Tampered Tokens | Blog</title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header class="navbar-sticky"><nav class="navbar-container"><div class="navbar-left"><a href="../../" class="navbar-logo-link" aria-label="AxelBase Home"><img src="../../AxelLab-Logo.ico" alt="AxelBase Logo" class="navbar-logo"/></a> <a href="../../" class="navbar-brand">AxelBase</a> <div class="bmac-container"><button class="bmac-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> <span>Buy me a coffee</span></button> <!--[!--><!--]--></div></div> <ul class="navbar-links"><li><a href="../../" class="nav-link">Home</a></li> <li><a href="../../#about" class="nav-link">About</a></li> <li><a href="../../#how-to-use" class="nav-link">How to use</a></li> <li><a href="../../#faq" class="nav-link">FAQ</a></li> <li><a href="../../blog" class="nav-link">Blog</a></li></ul></nav></header> <main class="content-wrapper"><!--[--><!----><div class="container fade-in post-layout svelte-led0iy"><div class="breadcrumbs svelte-led0iy"><a href="../../blog" class="svelte-led0iy">Blog</a> <span>/</span> <p class="svelte-led0iy">How to Detect Expired or Tampered Tokens</p></div> <article class="prose svelte-led0iy"><h1 class="svelte-led0iy">How to Detect Expired or Tampered Tokens</h1> <p class="post-meta svelte-led0iy">Published: November 10, 2025</p> <p class="svelte-led0iy">Token validation is a critical step in OAuth and OpenID Connect flows. A single expired or tampered token can lead to authentication failures, security breaches, or unauthorized access. The <strong>OAuth Token Inspector</strong> provides visual, real-time feedback to help developers catch issues early — all within the browser, with no backend required.</p> <h2 class="svelte-led0iy">Understanding Token Expiration</h2> <p class="svelte-led0iy">The <code>exp</code> (expiration) claim defines the moment a token becomes invalid. It is a Unix timestamp in seconds. The OAuth Token Inspector compares this value against the current system time and displays a color-coded badge:</p> <ul class="svelte-led0iy"><li class="svelte-led0iy"><strong>Valid (Green):</strong> <code>exp > now</code> — token is active.</li> <li class="svelte-led0iy"><strong>Expired (Red):</strong> <code>exp ≤ now</code> — token is no longer valid.</li> <li class="svelte-led0iy"><strong>No exp claim (Yellow):</strong> Token lacks <code>exp</code> — risky; may be accepted indefinitely.</li></ul> <p class="svelte-led0iy">This instant feedback helps you identify why an API call fails with <code>401 Unauthorized</code> or <code>invalid_token</code>.</p> <h3 class="svelte-led0iy">Clock Skew Considerations</h3> <p class="svelte-led0iy">Servers may allow a small grace period (e.g., 5 minutes) for clock drift. Always test with realistic time offsets. The Inspector uses <code>Date.now()</code> for accuracy, but you should validate server-side with tolerance.</p> <h2 class="svelte-led0iy">Spotting Tampered Tokens</h2> <p class="svelte-led0iy">While the tool does not cryptographically verify signatures, it helps detect tampering through visual inspection:</p> <ul class="svelte-led0iy"><li class="svelte-led0iy"><strong>Signature Display:</strong> The raw Base64URL-encoded signature is shown in full. Compare it with a known-good token.</li> <li class="svelte-led0iy"><strong>Header/Payload Mismatch:</strong> If <code>alg</code> says <code>RS256</code> but you expect <code>HS256</code>, investigate.</li> <li class="svelte-led0iy"><strong>Unexpected Claims:</strong> Look for injected fields like <code>admin: true</code> not issued by your IdP.</li></ul> <h3 class="svelte-led0iy">Common Tampering Techniques</h3> <p class="svelte-led0iy">Attackers may:</p> <ul class="svelte-led0iy"><li class="svelte-led0iy">Change <code>sub</code> to impersonate users</li> <li class="svelte-led0iy">Set <code>exp</code> to a future date</li> <li class="svelte-led0iy">Use <code>alg: none</code> to bypass signature checks</li></ul> <p class="svelte-led0iy">Use the Inspector during penetration testing to simulate these attacks safely.</p> <h2 class="svelte-led0iy">Best Practices for Token Validation</h2> <ol class="svelte-led0iy"><li class="svelte-led0iy">Always validate <code>exp</code>, <code>nbf</code>, and <code>iat</code></li> <li class="svelte-led0iy">Enforce <code>aud</code> (audience) matching</li> <li class="svelte-led0iy">Verify <code>iss</code> against trusted issuers</li> <li class="svelte-led0iy">Check <code>alg</code> is expected and not <code>none</code></li> <li class="svelte-led0iy">Use short-lived access tokens + refresh rotation</li></ol> <h2 class="svelte-led0iy">FAQ</h2> <details class="svelte-led0iy"><summary class="svelte-led0iy">Why is my token showing as expired?</summary> <p class="svelte-led0iy">Check system clock. If <code>exp</code> is in the past, request a new token via refresh grant.</p></details> <details class="svelte-led0iy"><summary class="svelte-led0iy">Can I trust the signature display?</summary> <p class="svelte-led0iy">Yes for comparison, but cryptographic verification requires the secret/public key.</p></details> <details class="svelte-led0iy"><summary class="svelte-led0iy">Should I reject tokens without <code>exp</code>?</summary> <p class="svelte-led0iy">Yes. Infinite-lifetime tokens are a security anti-pattern.</p></details> <p class="italic-note svelte-led0iy">Catch issues before they reach production. Validate early, validate often.</p></article></div><!----><!--]--></main> <footer class="footer-sticky"><div class="footer-container"><span class="footer-copyright">© AxelBase Markdown to HTML Converter – 2025</span> <div class="footer-links"><a href="../../privacy">Privacy Policy</a> <a href="../../terms">Terms and conditions</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1j9699b = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/oauth-token-inspector"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.Bc2NRBOk.js"),
+						import("../../_app/immutable/entry/app.CkfOm85K.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 7],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

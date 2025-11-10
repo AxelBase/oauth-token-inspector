@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <title>AxelBase – OAuth Token Inspector</title>
+		<link rel="icon" href="../../AxelLab-Logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.U2kIy6WS.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/6.Dua9lAU5.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.Bc2NRBOk.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D634OKY0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/gLR2rXyW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D2SCgjW4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CxahLZfs.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CkfOm85K.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/HWy2h-1Z.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Ch76_uMc.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CpmvvIb5.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CDQDGe86.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.D0xm7Wyv.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/C-vnMa-8.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/AtiAHdXu.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dhir5tAp.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CsAPl1sP.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.DmljJFm5.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/P0gGzP0m.js"><!--1al8b51--><meta name="description" content="Deep dive into the three parts of a JSON Web Token: Header, Payload, and Signature. Learn what each claim means and how to interpret them."/> <meta name="robots" content="index, follow"/> <meta property="og:title" content="Understanding JWT Structure | Blog"/> <meta property="og:description" content="Learn the anatomy of a JWT: Header (metadata), Payload (claims), and Signature (integrity)."/> <meta property="og:url" content="../../blog/posts/post3"/> <meta property="og:type" content="article"/> <meta property="og:site_name" content="OAuth Token Inspector"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="JWT Structure Explained"/> <meta name="twitter:description" content="Header, Payload, Signature — understand every part of your OAuth token."/> <meta name="author" content="Axelbase"/><!----><title>Understanding JWT Structure: Header, Payload, Signature | Blog</title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header class="navbar-sticky"><nav class="navbar-container"><div class="navbar-left"><a href="../../" class="navbar-logo-link" aria-label="AxelBase Home"><img src="../../AxelLab-Logo.ico" alt="AxelBase Logo" class="navbar-logo"/></a> <a href="../../" class="navbar-brand">AxelBase</a> <div class="bmac-container"><button class="bmac-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> <span>Buy me a coffee</span></button> <!--[!--><!--]--></div></div> <ul class="navbar-links"><li><a href="../../" class="nav-link">Home</a></li> <li><a href="../../#about" class="nav-link">About</a></li> <li><a href="../../#how-to-use" class="nav-link">How to use</a></li> <li><a href="../../#faq" class="nav-link">FAQ</a></li> <li><a href="../../blog" class="nav-link">Blog</a></li></ul></nav></header> <main class="content-wrapper"><!--[--><!----><div class="container fade-in post-layout svelte-1al8b51"><div class="breadcrumbs svelte-1al8b51"><a href="../../blog" class="svelte-1al8b51">Blog</a> <span>/</span> <p class="svelte-1al8b51">Understanding JWT Structure</p></div> <article class="prose svelte-1al8b51"><h1 class="svelte-1al8b51">Understanding JWT Structure: Header, Payload, Signature</h1> <p class="post-meta svelte-1al8b51">Published: November 10, 2025</p> <p class="svelte-1al8b51">A JSON Web Token (JWT) is a compact, URL-safe means of representing claims between parties. Defined in <a href="https://datatracker.ietf.org/doc/html/rfc7519" target="_blank" rel="noopener">RFC 7519</a>, it consists of three Base64URL-encoded parts separated by dots: <code class="svelte-1al8b51">header.payload.signature</code>. The <strong>OAuth Token Inspector</strong> visually separates and explains each segment to help developers debug authentication flows.</p> <h2 class="svelte-1al8b51">1. The Header</h2> <p class="svelte-1al8b51">The header contains metadata about the token type and cryptographic algorithm. Typical fields:</p> <ul class="svelte-1al8b51"><li class="svelte-1al8b51"><code class="svelte-1al8b51">alg</code>: Signing algorithm (<code class="svelte-1al8b51">RS256</code>, <code class="svelte-1al8b51">HS256</code>, <code class="svelte-1al8b51">none</code>)</li> <li class="svelte-1al8b51"><code class="svelte-1al8b51">typ</code>: Media type (<code class="svelte-1al8b51">"JWT"</code>)</li> <li class="svelte-1al8b51"><code class="svelte-1al8b51">kid</code>: Key ID (for key rotation)</li></ul> <p class="svelte-1al8b51"><strong>Example:</strong> "alg": "RS256", "typ": "JWT", "kid": "abc123"</p> <h3 class="svelte-1al8b51">Security Note</h3> <p class="svelte-1al8b51">An <code class="svelte-1al8b51">alg</code> value of <code class="svelte-1al8b51">none</code> allows signature bypass attacks. Always validate the algorithm server-side.</p> <h2 class="svelte-1al8b51">2. The Payload (Claims)</h2> <p class="svelte-1al8b51">The payload contains statements about the user and token metadata. Claims are divided into:</p> <h3 class="svelte-1al8b51">Registered Claims (Standard)</h3> <ul class="svelte-1al8b51"><li class="svelte-1al8b51"><code class="svelte-1al8b51">iss</code> (Issuer): Who issued the token</li> <li class="svelte-1al8b51"><code class="svelte-1al8b51">sub</code> (Subject): Who the token identifies</li> <li class="svelte-1al8b51"><code class="svelte-1al8b51">aud</code> (Audience): Intended recipients</li> <li class="svelte-1al8b51"><code class="svelte-1al8b51">exp</code> (Expiration): Unix timestamp</li> <li class="svelte-1al8b51"><code class="svelte-1al8b51">nbf</code> (Not Before): Activation time</li> <li class="svelte-1al8b51"><code class="svelte-1al8b51">iat</code> (Issued At): Creation time</li> <li class="svelte-1al8b51"><code class="svelte-1al8b51">jti</code> (JWT ID): Unique identifier</li></ul> <h3 class="svelte-1al8b51">Public &amp; Private Claims</h3> <p class="svelte-1al8b51">Custom claims like <code class="svelte-1al8b51">role</code>, <code class="svelte-1al8b51">permissions</code>, or <code class="svelte-1al8b51">email</code> are common but should avoid sensitive data (JWTs are not encrypted by default).</p> <h2 class="svelte-1al8b51">3. The Signature</h2> <p class="svelte-1al8b51">The signature ensures integrity. It is computed as:</p> <pre class="svelte-1al8b51"><code class="svelte-1al8b51">HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), secret)</code></pre> <p class="svelte-1al8b51">Or using RSA/ECDSA with a private key. The OAuth Token Inspector displays this raw value for manual verification or comparison.</p> <h3 class="svelte-1al8b51">Common Pitfalls</h3> <ul class="svelte-1al8b51"><li class="svelte-1al8b51">Trusting <code class="svelte-1al8b51">exp</code> without clock sync</li> <li class="svelte-1al8b51">Accepting tokens without <code class="svelte-1al8b51">aud</code> validation</li> <li class="svelte-1al8b51">Using symmetric keys in client-side code</li></ul> <h2 class="svelte-1al8b51">FAQ</h2> <details class="svelte-1al8b51"><summary class="svelte-1al8b51">Are JWTs encrypted?</summary> <p class="svelte-1al8b51">No. JWS (signed) tokens are encoded, not encrypted. Use JWE for confidentiality.</p></details> <details class="svelte-1al8b51"><summary class="svelte-1al8b51">Can I trust the payload?</summary> <p class="svelte-1al8b51">Never. Always verify the signature and re-fetch user data from your database.</p></details> <details class="svelte-1al8b51"><summary class="svelte-1al8b51">How does the Inspector help?</summary> <p class="svelte-1al8b51">It highlights standard claims with tooltips and validates <code class="svelte-1al8b51">exp</code> against current time.</p></details> <p class="italic-note svelte-1al8b51">Master JWT structure — build more secure applications.</p></article></div><!----><!--]--></main> <footer class="footer-sticky"><div class="footer-container"><span class="footer-copyright">© AxelBase Markdown to HTML Converter – 2025</span> <div class="footer-links"><a href="../../privacy">Privacy Policy</a> <a href="../../terms">Terms and conditions</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1j9699b = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/oauth-token-inspector"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.Bc2NRBOk.js"),
+						import("../../_app/immutable/entry/app.CkfOm85K.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

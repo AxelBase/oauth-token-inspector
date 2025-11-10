@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <title>AxelBase – OAuth Token Inspector</title>
+		<link rel="icon" href="../../AxelLab-Logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.U2kIy6WS.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/8.ChFeT4Q5.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.Bc2NRBOk.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D634OKY0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/gLR2rXyW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D2SCgjW4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CxahLZfs.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CkfOm85K.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/HWy2h-1Z.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Ch76_uMc.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CpmvvIb5.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CDQDGe86.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.D0xm7Wyv.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/C-vnMa-8.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/AtiAHdXu.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dhir5tAp.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CsAPl1sP.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/8.s-Na52Bx.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/P0gGzP0m.js"><!--1li990r--><meta name="description" content="Learn how to use the Copy JSON buttons in OAuth Token Inspector to extract header and payload data for Postman, curl, and code snippets."/> <meta name="robots" content="index, follow"/> <meta property="og:title" content="Copying Decoded JSON for API Debugging | Blog"/> <meta property="og:description" content="One-click export of JWT claims for faster API testing and development."/> <meta property="og:url" content="../../blog/posts/post5"/> <meta property="og:type" content="article"/> <meta property="og:site_name" content="OAuth Token Inspector"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="Copy JWT JSON Easily"/> <meta name="twitter:description" content="Export header and payload with one click."/> <meta name="author" content="Axelbase"/><!----><title>Copying Decoded JSON for API Debugging | Blog</title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header class="navbar-sticky"><nav class="navbar-container"><div class="navbar-left"><a href="../../" class="navbar-logo-link" aria-label="AxelBase Home"><img src="../../AxelLab-Logo.ico" alt="AxelBase Logo" class="navbar-logo"/></a> <a href="../../" class="navbar-brand">AxelBase</a> <div class="bmac-container"><button class="bmac-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> <span>Buy me a coffee</span></button> <!--[!--><!--]--></div></div> <ul class="navbar-links"><li><a href="../../" class="nav-link">Home</a></li> <li><a href="../../#about" class="nav-link">About</a></li> <li><a href="../../#how-to-use" class="nav-link">How to use</a></li> <li><a href="../../#faq" class="nav-link">FAQ</a></li> <li><a href="../../blog" class="nav-link">Blog</a></li></ul></nav></header> <main class="content-wrapper"><!--[--><!----><div class="container fade-in post-layout svelte-1li990r"><div class="breadcrumbs svelte-1li990r"><a href="../../blog" class="svelte-1li990r">Blog</a> <span>/</span> <p class="svelte-1li990r">Copying Decoded JSON for API Debugging</p></div> <article class="prose svelte-1li990r"><h1 class="svelte-1li990r">Copying Decoded JSON for API Debugging</h1> <p class="post-meta svelte-1li990r">Published: November 10, 2025</p> <p class="svelte-1li990r">During OAuth integration, you often need to inspect token claims in tools like Postman, curl, or your application code. Manually copying fields from a JWT is error-prone and time-consuming. The <strong>OAuth Token Inspector</strong> includes <strong>Copy JSON</strong> buttons that export the decoded header and payload in perfect, indented JSON — ready to paste anywhere.</p> <h2 class="svelte-1li990r">Why This Feature Matters</h2> <p class="svelte-1li990r">Developers frequently:</p> <ul class="svelte-1li990r"><li class="svelte-1li990r">Paste <code class="svelte-1li990r">sub</code> or <code class="svelte-1li990r">email</code> into database queries</li> <li class="svelte-1li990r">Mock API requests with token claims</li> <li class="svelte-1li990r">Debug scope mismatches (<code class="svelte-1li990r">scope</code> vs <code class="svelte-1li990r">aud</code>)</li> <li class="svelte-1li990r">Share redacted token data with team members</li></ul> <p class="svelte-1li990r">With one click, you get clean, syntax-highlighted JSON — no manual parsing required.</p> <h3 class="svelte-1li990r">How It Works</h3> <p class="svelte-1li990r">Each section (Header, Payload) has a dedicated <strong>Copy</strong> button:</p> <ul class="svelte-1li990r"><li class="svelte-1li990r"><strong>Copy Header JSON:</strong> Exports <code class="svelte-1li990r">alg</code>, <code class="svelte-1li990r">typ</code>, <code class="svelte-1li990r">kid</code>, etc.</li> <li class="svelte-1li990r"><strong>Copy Payload JSON:</strong> Exports all claims including <code class="svelte-1li990r">iss</code>, <code class="svelte-1li990r">sub</code>, <code class="svelte-1li990r">exp</code>, custom fields.</li></ul> <p class="svelte-1li990r">The output uses <code class="svelte-1li990r">JSON.stringify(obj, null, 2)</code> — perfect for logs, config files, or documentation.</p> <h2 class="svelte-1li990r">Use Cases in Development</h2> <h3 class="svelte-1li990r">1. Postman Environment Variables</h3> <pre class="svelte-1li990r"><code class="svelte-1li990r">// Paste payload to extract sub
+{
+  "sub": "user_123",
+  "email": "dev@example.com"
+}</code></pre> <p class="svelte-1li990r">Set <code class="svelte-1li990r">user_id</code> in Postman.</p> <h3 class="svelte-1li990r">2. curl with Bearer Token</h3> <pre class="svelte-1li990r"><code class="svelte-1li990r">curl -H "Authorization: Bearer {{token}}" \
+  -H "X-User-ID: {{sub}}" \
+  https://api.example.com/data</code></pre> <h3 class="svelte-1li990r">3. Frontend Debugging</h3> <p class="svelte-1li990r">Log claims in React/Vue/Svelte:</p> <pre class="svelte-1li990r"><code class="svelte-1li990r">console.log('User:', {{payload}})</code></pre> <h2 class="svelte-1li990r">Security Tips When Sharing</h2> <ul class="svelte-1li990r"><li class="svelte-1li990r">Redact sensitive fields (<code class="svelte-1li990r">email</code>, <code class="svelte-1li990r">name</code>) before sharing</li> <li class="svelte-1li990r">Never copy full production tokens</li> <li class="svelte-1li990r">Use sandbox environments</li></ul> <h2 class="svelte-1li990r">FAQ</h2> <details class="svelte-1li990r"><summary class="svelte-1li990r">Does it copy the signature?</summary> <p class="svelte-1li990r">No. Only header and payload JSON — signature is raw text.</p></details> <details class="svelte-1li990r"><summary class="svelte-1li990r">Can I copy both at once?</summary> <p class="svelte-1li990r">Not yet. Use browser dev tools to select both pre blocks if needed.</p></details> <details class="svelte-1li990r"><summary class="svelte-1li990r">Is the copied JSON safe?</summary> <p class="svelte-1li990r">Yes. It’s client-side generated and never transmitted.</p></details> <p class="italic-note svelte-1li990r">Debug faster. Copy smarter. Ship securely.</p></article></div><!----><!--]--></main> <footer class="footer-sticky"><div class="footer-container"><span class="footer-copyright">© AxelBase Markdown to HTML Converter – 2025</span> <div class="footer-links"><a href="../../privacy">Privacy Policy</a> <a href="../../terms">Terms and conditions</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1j9699b = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/oauth-token-inspector"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.Bc2NRBOk.js"),
+						import("../../_app/immutable/entry/app.CkfOm85K.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 8],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
