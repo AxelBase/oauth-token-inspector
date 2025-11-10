@@ -49,7 +49,6 @@
   <meta property="og:description" content="Deep dives, best practices, and tutorials for the OAuth Token Inspector — a 100% client-side JWT decoder." />
   <meta property="og:url" content="{base}/blog" />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="{base}/blog" />
 </svelte:head>
 
 <div class="post-layout fade-in">
@@ -58,7 +57,7 @@
     <p class="subtitle">
       Deep dives, best practices, and tutorials for the <strong>OAuth Token Inspector</strong> — a <em>100% client-side</em> JWT decoder.<br />
       No data leaves your browser. Built with SvelteKit, Bootstrap, and deployed via GitHub Pages.<br />
-      <a href="https://github.com/MrAAndersen123/oauth-token-inspector" target="_blank" rel="noopener noreferrer">View on GitHub</a>.
+      <a href="https://github.com/axelbase/oauth-token-inspector" target="_blank" rel="noopener noreferrer">View on GitHub</a>.
     </p>
   </header>
 

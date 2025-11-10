@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://axelbase.github.io/oauth-token-inspector/sitemap.xml
