@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://axelbase.github.io/oauth-token-inspector/sitemap.xml
+
+Sitemap: https://oauth-token-inspector.vercel.app/sitemap.xml
